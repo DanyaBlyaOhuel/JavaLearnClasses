@@ -1,5 +1,3 @@
-import java.lang.Math;
-
 public class Circle {
     public Point center;
     public double r;

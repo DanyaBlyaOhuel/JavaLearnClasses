@@ -1,27 +1,18 @@
-import java.lang.Math;
-
 public class Point {
-    public double x, y;
     public static int count;
+    public double x, y;
 
-    private Point(double x, double y) {
+    public Point(double x, double y) {
         this.x = x;
         this.y = y;
         count += 1;
     }
-
-    public static Point firstCnstr(double x, double y) {
-        return new Point(x, y);
-
+    public Point() {
+        this.x = 0;
+        this.y = 0;
+        count += 1;
     }
 
-    public static Point secondCnstr() {
-        return new Point(0, 0);
-    }
-
-    public double length(Point another) {
-        return Math.sqrt(Math.pow(this.x - another.x, 2) + Math.pow(this.y - another.y, 2));
-    }
 
     public static Point[] maxLenght(Point[] arr) {
         Point[] result = new Point[2];
@@ -41,6 +32,10 @@ public class Point {
         System.out.println(result[1].toString());
 
         return result;
+    }
+
+    public double length(Point another) {
+        return Math.sqrt(Math.pow(this.x - another.x, 2) + Math.pow(this.y - another.y, 2));
     }
 
     @Override
