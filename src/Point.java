@@ -18,7 +18,7 @@ public class Point {
         Point[] result = new Point[2];
         double maxLen = 0d;
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 double curlength = arr[i].length(arr[j]);
                 if (curlength > maxLen) {
                     maxLen = curlength;

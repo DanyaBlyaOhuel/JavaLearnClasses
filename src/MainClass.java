@@ -1,6 +1,9 @@
 import java.util.Arrays;
 
+
+// TASK 4
 public class MainClass {
+
 
     public static void main(String[] args) {
 
@@ -73,15 +76,16 @@ public class MainClass {
 
     //1 removeFrom
     static int[] removeFrom(int[] arr, int x) {
-        int[] arrNew = new int[0];
+        int[] Result = new int[0];
         for (int i = 0, k = 0; i < arr.length; i++) {
             if (arr[i] != x) {
-                arrNew = Arrays.copyOf(arrNew, arrNew.length + 1);
-                arrNew[k] = arr[i];
+                Result = Arrays.copyOf(Result, Result.length + 1);
+                Result[k] = arr[i];
                 k++;
             }
         }
-        return arrNew;
+
+        return Result;
 
     }
 
