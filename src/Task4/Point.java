@@ -1,3 +1,5 @@
+package Task4;
+
 public class Point {
     public static int count;
     public double x, y;
@@ -7,6 +9,7 @@ public class Point {
         this.y = y;
         count += 1;
     }
+
     public Point() {
         this.x = 0;
         this.y = 0;

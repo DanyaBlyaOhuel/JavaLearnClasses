@@ -1,5 +1,6 @@
-public class Task5p1 {
+package Task5;
 
+public class MainClass {
 
     public static void main(String[] args) {
 
@@ -9,9 +10,20 @@ public class Task5p1 {
         //2
         System.out.println(DoubleChar("123 123"));
 
+        //4
+        Task4.Point test = new Task4.Point(1d, 2d);
+        Task4.Point test2 = new Task4.Point(5d, 5d);
+        Task4.Point test3 = new Task4.Point(3d, 6d);
+        Vector testVec = new Vector(test, test3);
+
+        System.out.println(test2.x);
+        System.out.println(test2.y);
+        System.out.println(testVec.startFrom(test2).pos1);
+
+
     }
 
-    static String WelcomeCity (String[] name, String city, String state){
+    static String WelcomeCity(String[] name, String city, String state) {
         StringBuilder Result = new StringBuilder("Hello,");
 
         for (int i = 0; i < name.length; i++) {
@@ -23,7 +35,7 @@ public class Task5p1 {
         return Result.toString();
     }
 
-    static String DoubleChar (String str) {
+    static String DoubleChar(String str) {
         StringBuilder Result = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             Result.append(str.charAt(i)).append(str.charAt(i));

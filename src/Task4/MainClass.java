@@ -1,7 +1,7 @@
+package Task4;
+
 import java.util.Arrays;
 
-
-// TASK 4
 public class MainClass {
 
 
@@ -57,7 +57,6 @@ public class MainClass {
         Point test = new Point(3d, 4d);
         Point test2 = new Point();
         Point test3 = new Point(6d, 8d);
-
         //5.3
         System.out.println(test.length(test2));
         //5.4
@@ -128,13 +127,14 @@ public class MainClass {
 
         return arr;
     }
-        static int[][] matrixColumnReplace(int[][] arr, int[] y) {
-            arr = martixTranspose(arr);
-            arr = matrixRowReplace(arr, y);
-            arr = martixTranspose(arr);
 
-            return arr;
-        }
+    static int[][] matrixColumnReplace(int[][] arr, int[] y) {
+        arr = martixTranspose(arr);
+        arr = matrixRowReplace(arr, y);
+        arr = martixTranspose(arr);
+
+        return arr;
+    }
 
     //3 multMatrix
     static int[][] multMatrix(int[][] x, int[][] y) {
@@ -161,4 +161,5 @@ public class MainClass {
     }
 
 }
+
 
