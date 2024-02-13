@@ -55,7 +55,7 @@ public class Person {
                         scanner.nextLine(),
                         scanner.nextLine(),
                         scanner.nextLine(),
-                        Integer.parseInt(scanner.nextLine())
+                        (int) Double.parseDouble(scanner.nextLine())
                 );
 
                 scanner.close();
@@ -73,38 +73,74 @@ public class Person {
 
             choice = scanner.nextLine();
 
-            scanner.close();
-        }
 
-        if (choice.isEmpty()) {
-            return;
-        }
 
-        if (choice.equals("Load")) {
-            try (Scanner scanner = new Scanner(System.in)) {
+            if (choice.isEmpty()) {
+                return;
+            }
+
+            if (choice.equals("Load")) {
                 System.out.println("Enter the directory");
 
                 directory = scanner.nextLine();
 
-                scanner.close();
+
+                if (directory.isEmpty()) {
+                    return;
+                }
+
+                File file = new File(directory);
+
+                Person person = loadFrom(file);
+                System.out.println(person.id);
+                System.out.println(person.firstName);
+                System.out.println(person.secondName);
+                System.out.println(person.lastName);
+                System.out.println(person.sex);
+                System.out.println(person.dateOfBirth);
+                System.out.println(person.iNN);
+
             }
 
-            if (directory.isEmpty()) {
-                return;
+            if (choice.equals("Save")) {
+
+                System.out.println("Write the id");
+                double id = Double.parseDouble(scanner.nextLine());
+                System.out.println("Write the firstName");
+                String firstName = scanner.nextLine();
+                System.out.println("Write the secondName");
+                String secondName = scanner.nextLine();
+                System.out.println("Write the lastName");
+                String lastName = scanner.nextLine();
+                System.out.println("Write the sex");
+                String sex = scanner.nextLine();
+                System.out.println("Write the dateOfBirth");
+                String dateOfBirth = scanner.nextLine();
+                System.out.println("Write the iNN");
+                int iNN = Integer.parseInt(scanner.nextLine());
+
+                Person person = new Person(id,
+                        firstName,
+                        secondName,
+                        lastName,
+                        sex,
+                        dateOfBirth,
+                        iNN
+                );
+
+                System.out.println("Enter the directory");
+
+                directory = scanner.nextLine();
+
+                if (directory.isEmpty()) {
+                    return;
+                }
+
+                File file = new File(directory);
+                saveTo(file, person);
+
+
             }
-
-            File file = new File(directory);
-            Person person = loadFrom(file);
-
-            System.out.println(person.id);
-            System.out.println(person.firstName);
-            System.out.println(person.secondName);
-            System.out.println(person.lastName);
-            System.out.println(person.sex);
-            System.out.println(person.dateOfBirth);
-            System.out.println(person.iNN);
-
-
         }
 
     }
