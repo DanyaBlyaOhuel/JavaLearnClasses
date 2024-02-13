@@ -12,7 +12,7 @@ public class MainClass {
 
         //File file = new File("filename.txt");
 
-        //file.createNewFile();
+        //S;
 
         //Person person = new Person(123456d, "Тестов", "Тест", "Тестович", "М", "11-01-1991", 654321);
 
