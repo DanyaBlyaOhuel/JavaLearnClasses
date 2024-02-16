@@ -5,11 +5,12 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Person {
-    public double id, iNN;
+    public double  iNN;
+    public int id;
 
     public String firstName, secondName, lastName, sex, dateOfBirth;
 
-    public Person(double id, String firstName,
+    public Person(int id, String firstName,
                   String secondName,
                   String lastName,
                   String sex,
@@ -29,7 +30,7 @@ public class Person {
     public static void saveTo(File file, Person person) throws FileNotFoundException {
         try (FileOutputStream stream = new FileOutputStream(file)) {
             try (PrintWriter writer = new PrintWriter(stream)) {
-                writer.println(person.id);
+                writer.println(Double.toString(person.id));
                 writer.println(person.firstName);
                 writer.println(person.secondName);
                 writer.println(person.lastName);
@@ -49,7 +50,7 @@ public class Person {
         try (FileInputStream stream = new FileInputStream(file)) {
             try (Scanner scanner = new Scanner(file)) {
 
-                Person personResult = new Person(Double.parseDouble(scanner.nextLine()),
+                Person personResult = new Person(Integer.parseInt(scanner.nextLine()),
                         scanner.nextLine(),
                         scanner.nextLine(),
                         scanner.nextLine(),
@@ -105,7 +106,7 @@ public class Person {
             if (choice.equals("Save")) {
 
                 System.out.println("Write the id");
-                double id = Double.parseDouble(scanner.nextLine());
+                int id = Integer.parseInt(scanner.nextLine());
                 System.out.println("Write the firstName");
                 String firstName = scanner.nextLine();
                 System.out.println("Write the secondName");
