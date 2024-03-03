@@ -1,23 +1,35 @@
 package repository;
 
+import entity.Person;
+
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class MainClass {
 
     public static void main(String[] args) throws IOException {
 
         //tests
-//        Person person = Person.loadFrom(new File("filename.txt"));
-//        File file = new File("src/dsad/addasd/ffd.txt");
-//        DirectoryPersonRepository dpr = new DirectoryPersonRepository(file);
-//
-//        dpr.save(person);
+        //create files ids
+        /*Person = Person.loadFrom(new File("filename.txt"));
+        File file = new File("src/" + person.id + ".txt");
+        DirectoryPersonRepository dpr = new DirectoryPersonRepository(file);
+        dpr.save(person);
+
+        person = Person.loadFrom(new File("filesavetest.txt"));
+        file = new File("src/" + person.id + ".txt");
+        dpr = new DirectoryPersonRepository(file);
+        dpr.save(person);*/
+
+        //load from files ids
+
         //Person person2 = dpr.load(123456);
         //System.out.println(person2.lastName);
 
-        System.out.println(isPalindrom("Аргентинаманитнегра"));
+        //System.out.println(isPalindrom("Аргентинаманитнегра"));
 
-        System.out.println(countSubString("авотхуйвавахуйловаайухававхуйо", "хуй"));
+        //System.out.println(countSubString("авотхуйвавахуйловаайухававхуйо", "хуй"));
 
     }
 
